@@ -10,5 +10,8 @@ import { NTSlideBarComponent } from './ntslide-bar.component';
   exports: [
     NTSlideBarComponent
   ],
+  bootstrap:[
+    NTSlideBarComponent
+  ]
 })
 export class NTSlideBarModule { }

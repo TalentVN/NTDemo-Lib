@@ -21,16 +21,16 @@ export class AppComponent implements OnInit {
       LogoUrl: "https://cdn.worldvectorlogo.com/logos/react.svg",
       OrgName: "OSD",
       Menus: [{
-        title: "Menu 1",
-        link: "#"
+        Title: "Menu 1",
+        Link: "#1"
       },
       {
-        title: "Menu 2",
-        link: "#"
+        Title: "Menu 2",
+        Link: "#2"
       },
       {
-        title: "Menu 2",
-        link: "#"
+        Title: "Menu 2",
+        Link: "#3"
       }
       ],
       User: {

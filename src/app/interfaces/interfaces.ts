@@ -12,8 +12,8 @@ export interface HeaderSettings {
  * Header Menu Interface Model
  */
 export interface MenuData {
-    title?: string;
-    link?: string;
+    Title?: string;
+    Link?: string;
 }
 
 /**
