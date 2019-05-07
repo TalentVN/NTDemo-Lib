@@ -1,4 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+/**
+ * @license
+ * Orient Software © 2019 All Rights Reserved
+ * Licensed under the MIT License.
+ */
+
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { UserLogin } from './userlogin';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdModalContent } from './components/modal/ntmodal.component';
@@ -7,14 +13,43 @@ import { NgbdModalContent } from './components/modal/ntmodal.component';
  * NTHeaderComponent
  * 
  * Login page with binding model and show popup
+ * 
+ * Example:
+ * ```ts
+ * <NTLogin (userName)='getUserName($event)'
+ *  (passWord)='getPassWord($event)'
+ *  (rememberMe)='getRememberMe($event)'>
+ * </NTLogin>
+ * ```
  */
 @Component({
-  selector: 'app-ntlogin',
+  selector: 'NTLogin',
   templateUrl: './ntlogin.component.html',
-  styleUrls: ['./ntlogin.component.css']
+  styleUrls: ['./ntlogin.component.scss']
 })
 
 export class NTLoginComponent implements OnInit {
+
+  /**
+   * userName output
+   * 
+   * @returns {string}
+   */
+  @Output() userName = new EventEmitter<string>();
+
+  /**
+   * passWord output
+   * 
+   * @returns {string}
+   */
+  @Output() passWord = new EventEmitter<string>();
+
+  /**
+   * rememberMe output
+   * 
+   * @returns {boolean}
+   */
+  @Output() rememberMe = new EventEmitter<boolean>();
 
   // Init model
   userLogin: UserLogin = {
@@ -29,7 +64,7 @@ export class NTLoginComponent implements OnInit {
   }
 
   // Onlick to open modal
-  open() {
+  open(): void {
     const modalRef = this.modalService.open(NgbdModalContent);
     modalRef.componentInstance.UserName = this.userLogin.UserName;
     modalRef.componentInstance.PassWord = this.userLogin.Password;
@@ -37,8 +72,14 @@ export class NTLoginComponent implements OnInit {
 
     // Received result message
     modalRef.result.then((data) => {
-      console.log(data);
+      this._outputBinding();
     })
+  }
+
+  _outputBinding(): void {
+    this.userName.emit(this.userLogin.UserName);
+    this.passWord.emit(this.userLogin.Password);
+    this.rememberMe.emit(this.userLogin.RememberMe);
   }
 
 }

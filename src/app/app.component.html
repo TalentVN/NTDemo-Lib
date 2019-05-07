@@ -1,16 +1,16 @@
-<div class="">
-    <app-ntheader title="{{title}}" [headerSettings]="headerSettings"></app-ntheader>
+<div class="container">
+    <NTHeader title="{{title}}" [headerSettings]="headerSettings"></NTHeader>
     <div class="row">
         <div class="col-md-3">
-            <app-ntslide-bar title="{{title}}" [menuSettings]="menuSettings"></app-ntslide-bar>
+            <NTSlide-Bar title="{{title}}" [MenuSettings]="menuSettings"></NTSlide-Bar>
         </div>
         <div class="col-md-9">
             <!--The content below is only a placeholder and can be replaced.-->
-            <app-ntlogin></app-ntlogin>
+            <NTLogin (userName)='getUserName($event)' (passWord)='getPassWord($event)' (rememberMe)='getRememberMe($event)'></NTLogin>
         </div>
     </div>
 
-    <app-ntfooter title="{{bottomTitle}}"></app-ntfooter>
+    <NTFooter title="{{bottomTitle}}"></NTFooter>
 
     <!-- Content -->
     <router-outlet></router-outlet>

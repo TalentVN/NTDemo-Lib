@@ -1,3 +1,9 @@
+/**
+ * @license
+ * Orient Software © 2019 All Rights Reserved
+ * Licensed under the MIT License.
+ */
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';

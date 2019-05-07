@@ -10,7 +10,6 @@ import { NTLoginModule } from './modules/ntlogin/ntlogin.module';
 import { NgbButtonsModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 
@@ -26,7 +25,6 @@ import { AppComponent } from './app.component';
     NTSlideBarModule,
     NTFooterModule,
     NgbModule,
-    FontAwesomeModule,
     NgbButtonsModule
   ],
   providers: [],

@@ -1,3 +1,9 @@
+/**
+ * @license
+ * Orient Software © 2019 All Rights Reserved
+ * Licensed under the MIT License.
+ */
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -15,7 +21,7 @@ import { NgbdModalContent } from './components/modal/ntmodal.component';
     CommonModule,
     FormsModule,
     NgbModalModule,
-    NgbModule
+    NgbModule,
   ],
   exports: [
     NTLoginComponent,

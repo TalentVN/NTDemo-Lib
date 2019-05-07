@@ -37,15 +37,15 @@ export interface Tag {
  * User Info Interface Model
  */
 export interface Menu {
-    menuItems?: MenuItem[];
+    MenuItems?: MenuItem[];
 }
 
 /**
  * User Info Interface Model
  */
 export interface MenuItem {
-    title: string;
-    link: string;
-    icon: string;
+    Title: string;
+    Link?: string;
+    Icon?: string;
 }
 

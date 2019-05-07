@@ -1,3 +1,9 @@
+/**
+ * @license
+ * Orient Software © 2019 All Rights Reserved
+ * Licensed under the MIT License.
+ */
+
 import { Component, OnInit, Input } from '@angular/core';
 import { HeaderSettings } from '../../interfaces/interfaces';
 
@@ -5,9 +11,9 @@ import { HeaderSettings } from '../../interfaces/interfaces';
  * NTHeaderComponent
  */
 @Component({
-  selector: 'app-ntheader',
+  selector: 'NTHeader',
   templateUrl: './ntheader.component.html',
-  styleUrls: ['./ntheader.component.css'],
+  styleUrls: ['./ntheader.component.scss'],
   inputs: ['headerSettings']
 })
 
@@ -21,7 +27,6 @@ export class NTHeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this._headerSettings)
   }
 
   // Inputs properties

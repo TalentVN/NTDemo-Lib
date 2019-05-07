@@ -4,7 +4,7 @@ import { HeaderSettings, Menu } from './interfaces/interfaces';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
   title = 'NT-Demo-lib';
@@ -63,20 +63,56 @@ export class AppComponent implements OnInit {
 
     // Fake datas menuSettings
     this.menuSettings = {
-      menuItems: [{
-        title: "Menu 1",
-        link: "",
-        icon: ""
+      MenuItems: [{
+        Title: "Menu Menu Menu Menu Menu 1",
+        Link: "#",
+        Icon: ""
       },
       {
-        title: "Menu 2",
-        link: "",
-        icon: ""
-      },]
+        Title: "Menu 2",
+        Link: "#",
+        Icon: ""
+      },
+      {
+        Title: "Menu 2",
+        Link: "#",
+        Icon: ""
+      },
+      {
+        Title: "Menu 2",
+        Link: "#",
+        Icon: ""
+      },
+      {
+        Title: "Menu 2",
+        Link: "#",
+        Icon: ""
+      },
+      {
+        Title: "Menu 2",
+        Link: "#",
+        Icon: ""
+      },
+      ]
     }
   }
 
   ngOnInit() {
 
+  }
+
+  // Catch UserName output
+  getUserName(event) {
+    console.log(event);
+  }
+
+  // Catch PassWord output
+  getPassWord(event) {
+    console.log(event);
+  }
+
+  // Catch RememberMe output
+  getRememberMe(event) {
+    console.log(event);
   }
 }
