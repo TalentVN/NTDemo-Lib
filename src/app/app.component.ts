@@ -9,7 +9,7 @@ import { HeaderSettings, Menu } from './interfaces/interfaces';
 export class AppComponent implements OnInit {
   title = 'NT-Demo-lib';
 
-  bottomTitle = 'Orient Software © 2017 All Rights Reserved. Made with love by Orient Team.';
+  bottomTitle = 'Orient Software © 2019 All Rights Reserved. Made with love by Orient Team.';
 
   headerSettings: HeaderSettings;
   menuSettings: Menu;
