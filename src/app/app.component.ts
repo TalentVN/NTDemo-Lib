@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HeaderSettings } from './interfaces/interfaces';
+import { HeaderSettings, Menu } from './interfaces/interfaces';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +9,16 @@ import { HeaderSettings } from './interfaces/interfaces';
 export class AppComponent implements OnInit {
   title = 'NT-Demo-lib';
 
+  bottomTitle = 'Orient Software © 2017 All Rights Reserved. Made with love by Orient Team.';
+
   headerSettings: HeaderSettings;
+  menuSettings: Menu;
 
   constructor() {
 
-    // Fake datas
+    // Fake datas headerSettings
     this.headerSettings = {
-      LogoUrl: "https://pbs.twimg.com/profile_images/462130746484719616/K1yUo_yP_400x400.png",
+      LogoUrl: "https://cdn.worldvectorlogo.com/logos/react.svg",
       OrgName: "OSD",
       Menus: [{
         title: "Menu 1",
@@ -32,11 +35,48 @@ export class AppComponent implements OnInit {
       ],
       User: {
         UserName: "Nhat Tran",
-        ProfileImage: "https://cachlammoi.com/wp-content/uploads/2018/01/mixed-logo.jpg",
+        ProfileImage: "https://img.icons8.com/color/1600/circled-user-male-skin-type-1-2.png",
+        Tags: [
+          {
+            Detail: "Your Profile",
+            Link: "#"
+          },
+          {
+            Detail: "Your Projects",
+            Link: "#"
+          },
+          {
+            Detail: "Settings",
+            Link: "#"
+          },
+          {
+            Detail: "Help",
+            Link: "#"
+          },
+          {
+            Detail: "Sign Out",
+            Link: "#"
+          }
+        ]
       }
+    }
+
+    // Fake datas menuSettings
+    this.menuSettings = {
+      menuItems: [{
+        title: "Menu 1",
+        link: "",
+        icon: ""
+      },
+      {
+        title: "Menu 2",
+        link: "",
+        icon: ""
+      },]
     }
   }
 
   ngOnInit() {
+
   }
 }

@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HeaderSettings } from '../../interfaces/interfaces';
 
+/**
+ * NTHeaderComponent
+ */
 @Component({
   selector: 'app-ntheader',
   templateUrl: './ntheader.component.html',
@@ -8,12 +11,10 @@ import { HeaderSettings } from '../../interfaces/interfaces';
   inputs: ['headerSettings']
 })
 
-/**
- * NTHeaderComponent
- */
 export class NTHeaderComponent implements OnInit {
 
   @Input() title: string;
+  
 
   _headerSettings: HeaderSettings;
 
