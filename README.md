@@ -315,28 +315,30 @@ import { HeaderSettings, Menu } from 'nt-demo-lib/src/app/interfaces/interfaces'
   selector: 'app-root',
   template: `
     <div class="container">
-      <NTHeader title="{{title}}" (onSubmit)="searchSubmit($event)" [headerSettings]="headerSettings"></NTHeader>
-      <div class="row">
-          <NTSlide-Bar [isOpen]="isOpen" title="{{title}}" [menuSettings]="menuSettings"></NTSlide-Bar>
+        <NTHeader title="{{title}}" (onSubmit)="searchSubmit($event)" [headerSettings]="headerSettings"></NTHeader>
+        <div class="row">
 
-          <div [ngClass]="{'col-md-9': isOpen, 'col-md-12': !isOpen}">
+            <NTSlide-Bar [isOpen]="isOpen" title="{{title}}" [menuSettings]="menuSettings"></NTSlide-Bar>
 
-              <!-- Rounded switch -->
-              <label class="switch">
-                  <input (click)="toggle()" type="checkbox" checked>
-                  <span class="slider round"></span>
-              </label>
+            <div [ngClass]="{'col-md-9': isOpen, 'col-md-12': !isOpen}">
 
-              <NTLogin (userName)='getUserName($event)' (passWord)='getPassWord($event)'
-                  (rememberMe)='getRememberMe($event)'></NTLogin>
-          </div>
-      </div>
+                <!-- Rounded switch -->
+                <label class="switch">
+                    <input (click)="toggle()" type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
 
-      <NTFooter title="{{bottomTitle}}"></NTFooter>
+                <!--The content below is only a placeholder and can be replaced.-->
+                <NTLogin (userName)='getUserName($event)' (passWord)='getPassWord($event)'
+                    (rememberMe)='getRememberMe($event)' (submited)='getSubmited($event)'></NTLogin>
+            </div>
+        </div>
 
-      <!-- Content -->
-      <router-outlet></router-outlet>
-  </div>
+        <NTFooter [title]="bottomTitle"></NTFooter>
+
+        <!-- Content -->
+        <router-outlet></router-outlet>
+    </div>
   `,
   styleUrls: ['./app.component.scss']
 })
@@ -462,8 +464,14 @@ export class AppComponent implements OnInit {
   }
 
   // Catch RememberMe from LoginComponent output
+  public getSubmited(event): void {
+    console.log(event);
+  }
+
+  // Catch RememberMe from LoginComponent output
   public searchSubmit(event): void {
     console.log(event);
   }
 }
+
 ```
