@@ -9,6 +9,8 @@ import { HeaderSettings, Menu } from '../app/interfaces/interfaces';
 export class AppComponent implements OnInit {
   title = 'NT-Demo-lib';
 
+  isOpen: boolean = true;
+
   bottomTitle = 'Orient Software © 2019 All Rights Reserved. Made with love by Orient Team.';
 
   headerSettings: HeaderSettings;
@@ -106,6 +108,10 @@ export class AppComponent implements OnInit {
     };
   }
 
+  toggle(): void {
+    this.isOpen = !this.isOpen;
+  }
+
   // Catch UserName from LoginComponent output
   public getUserName(event): void {
     console.log(event);
@@ -118,6 +124,11 @@ export class AppComponent implements OnInit {
 
   // Catch RememberMe from LoginComponent output
   public getRememberMe(event): void {
+    console.log(event);
+  }
+
+  // Catch RememberMe from LoginComponent output
+  public searchSubmit(event): void {
     console.log(event);
   }
 }

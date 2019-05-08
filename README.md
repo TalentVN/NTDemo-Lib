@@ -108,7 +108,70 @@ imports: [
   ],
 ```
 
+### How to use NTheaderModule and NTHeaderComponent
+
+  Import Module
+```ts
+// Header Module include Header component
+import { NTheaderModule } from 'nt-demo-lib';
+...
+imports: [
+    NTheaderModule,
+  ],
+```
+  Template
+```ts
+<NTHeader title="{{title}}" (onSubmit)="searchSubmit($event)" [headerSettings]="headerSettings"></NTHeader>
+```
+ Setting header on component file such as app.component.ts
+```ts
+headerSettings = {
+      logoUrl: 'https://cdn.worldvectorlogo.com/logos/react.svg',
+      orgName: 'OSD',
+      menus: [{
+        title: 'Menu 1',
+        link: '#1'
+      },
+      {
+        title: 'Menu 2',
+        link: '#2'
+      },
+      {
+        title: 'Menu 2',
+        link: '#3'
+      }
+      ],
+      user: {
+        userName: 'Nhat Tran',
+        profileImage: 'https://img.icons8.com/color/1600/circled-user-male-skin-type-1-2.png',
+        tags: [
+          {
+            detail: 'Your Profile',
+            link: '#'
+          },
+          {
+            detail: 'Your Projects',
+            link: '#'
+          },
+          {
+            detail: 'Settings',
+            link: '#'
+          },
+          {
+            detail: 'Help',
+            link: '#'
+          },
+          {
+            detail: 'Sign Out',
+            link: '#'
+          }
+        ]
+      }
+```
+
 ### Demo page using 4 components: Header, SlideBar, Footer, Login
+
+All sample use modules and components in here: [https://github.com/TalentVN/NTDemo-Lib/tree/master/src/test](https://github.com/TalentVN/NTDemo-Lib/tree/master/src/test)
 
 ```ts
 import { Component, OnInit } from '@angular/core';
@@ -118,14 +181,20 @@ import { HeaderSettings, Menu } from 'nt-demo-lib/src/app/interfaces/interfaces'
   selector: 'app-root',
   template: `
     <div class="container">
-      <NTHeader title="{{title}}" [headerSettings]="headerSettings"></NTHeader>
+      <NTHeader title="{{title}}" (onSubmit)="searchSubmit($event)" [headerSettings]="headerSettings"></NTHeader>
       <div class="row">
-          <div class="col-md-3">
-              <NTSlide-Bar title="{{title}}" [menuSettings]="menuSettings"></NTSlide-Bar>
-          </div>
-          <div class="col-md-9">
-              <!--The content below is only a placeholder and can be replaced.-->
-              <NTLogin (userName)='getUserName($event)' (passWord)='getPassWord($event)' (rememberMe)='getRememberMe($event)'></NTLogin>
+          <NTSlide-Bar [isOpen]="isOpen" title="{{title}}" [menuSettings]="menuSettings"></NTSlide-Bar>
+
+          <div [ngClass]="{'col-md-9': isOpen, 'col-md-12': !isOpen}">
+
+              <!-- Rounded switch -->
+              <label class="switch">
+                  <input (click)="toggle()" type="checkbox" checked>
+                  <span class="slider round"></span>
+              </label>
+
+              <NTLogin (userName)='getUserName($event)' (passWord)='getPassWord($event)'
+                  (rememberMe)='getRememberMe($event)'></NTLogin>
           </div>
       </div>
 
@@ -133,17 +202,19 @@ import { HeaderSettings, Menu } from 'nt-demo-lib/src/app/interfaces/interfaces'
 
       <!-- Content -->
       <router-outlet></router-outlet>
-    </div>
+  </div>
   `,
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  protected title = 'NT-Demo-lib';
+  title = 'NT-Demo-lib';
 
-  protected bottomTitle = 'Orient Software © 2019 All Rights Reserved. Made with love by Orient Team.';
+  isOpen: boolean = true;
 
-  protected headerSettings: HeaderSettings;
-  protected menuSettings: Menu;
+  bottomTitle = 'Orient Software © 2019 All Rights Reserved. Made with love by Orient Team.';
+
+  headerSettings: HeaderSettings;
+  menuSettings: Menu;
 
   constructor() { }
 
@@ -153,7 +224,7 @@ export class AppComponent implements OnInit {
   }
 
   // Fake datas headerSettings
-  protected buildHeaderSetting(): void {
+  private buildHeaderSetting(): void {
 
     this.headerSettings = {
       logoUrl: 'https://cdn.worldvectorlogo.com/logos/react.svg',
@@ -201,7 +272,7 @@ export class AppComponent implements OnInit {
   }
 
   // Fake datas menuSettings
-  protected buildMenuSetting(): void {
+  private buildMenuSetting(): void {
     this.menuSettings = {
       menuItems: [{
         title: 'Menu Menu 1',
@@ -237,18 +308,27 @@ export class AppComponent implements OnInit {
     };
   }
 
+  toggle(): void {
+    this.isOpen = !this.isOpen;
+  }
+
   // Catch UserName from LoginComponent output
-  protected getUserName(event): void {
+  public getUserName(event): void {
     console.log(event);
   }
 
   // Catch PassWord from LoginComponent output
-  protected getPassWord(event): void {
+  public getPassWord(event): void {
     console.log(event);
   }
 
   // Catch RememberMe from LoginComponent output
-  protected getRememberMe(event): void {
+  public getRememberMe(event): void {
+    console.log(event);
+  }
+
+  // Catch RememberMe from LoginComponent output
+  public searchSubmit(event): void {
     console.log(event);
   }
 }
