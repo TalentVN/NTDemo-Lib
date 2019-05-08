@@ -111,23 +111,22 @@ imports: [
 ### Demo page using 4 components: Header, SlideBar, Footer, Login
 
 ```ts
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeaderSettings, Menu } from 'nt-demo-lib/src/app/interfaces/interfaces';
 
 @Component({
   selector: 'app-root',
   template: `
     <div class="container">
-      <NTHeader title="{{title}}" [HeaderSettings]="headerSettings"></NTHeader>
+      <NTHeader title="{{title}}" [headerSettings]="headerSettings"></NTHeader>
       <div class="row">
-        <div class="col-md-3">
-          <NTSlide-Bar title="{{title}}" [MenuSettings]="menuSettings"></NTSlide-Bar>
-        </div>
-        <div class="col-md-9">
-          <!--Render Login Component-->
-          <NTLogin (userName)='getUserName($event)' (passWord)='getPassWord($event)' (rememberMe)='getRememberMe($event)'>
-          </NTLogin>
-        </div>
+          <div class="col-md-3">
+              <NTSlide-Bar title="{{title}}" [menuSettings]="menuSettings"></NTSlide-Bar>
+          </div>
+          <div class="col-md-9">
+              <!--The content below is only a placeholder and can be replaced.-->
+              <NTLogin (userName)='getUserName($event)' (passWord)='getPassWord($event)' (rememberMe)='getRememberMe($event)'></NTLogin>
+          </div>
       </div>
 
       <NTFooter title="{{bottomTitle}}"></NTFooter>

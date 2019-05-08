@@ -7,12 +7,12 @@ import { HeaderSettings, Menu } from '../app/interfaces/interfaces';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  protected title = 'NT-Demo-lib';
+  title = 'NT-Demo-lib';
 
-  protected bottomTitle = 'Orient Software © 2019 All Rights Reserved. Made with love by Orient Team.';
+  bottomTitle = 'Orient Software © 2019 All Rights Reserved. Made with love by Orient Team.';
 
-  protected headerSettings: HeaderSettings;
-  protected menuSettings: Menu;
+  headerSettings: HeaderSettings;
+  menuSettings: Menu;
 
   constructor() { }
 
@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
   }
 
   // Fake datas headerSettings
-  protected buildHeaderSetting(): void {
+  private buildHeaderSetting(): void {
 
     this.headerSettings = {
       logoUrl: 'https://cdn.worldvectorlogo.com/logos/react.svg',
@@ -70,7 +70,7 @@ export class AppComponent implements OnInit {
   }
 
   // Fake datas menuSettings
-  protected buildMenuSetting(): void {
+  private buildMenuSetting(): void {
     this.menuSettings = {
       menuItems: [{
         title: 'Menu Menu 1',
@@ -107,17 +107,17 @@ export class AppComponent implements OnInit {
   }
 
   // Catch UserName from LoginComponent output
-  protected getUserName(event): void {
+  public getUserName(event): void {
     console.log(event);
   }
 
   // Catch PassWord from LoginComponent output
-  protected getPassWord(event): void {
+  public getPassWord(event): void {
     console.log(event);
   }
 
   // Catch RememberMe from LoginComponent output
-  protected getRememberMe(event): void {
+  public getRememberMe(event): void {
     console.log(event);
   }
 }
