@@ -307,7 +307,7 @@ public getSubmited(event): void {
 
 All sample use modules and components in here: [https://github.com/TalentVN/NTDemo-Lib/tree/master/src/test](https://github.com/TalentVN/NTDemo-Lib/tree/master/src/test)
 
-<!-- ```ts
+```ts
 import { Component, OnInit } from '@angular/core';
 import { HeaderSettings, Menu } from 'nt-demo-lib/src/app/interfaces/interfaces';
 
@@ -466,4 +466,4 @@ export class AppComponent implements OnInit {
     console.log(event);
   }
 }
-``` -->
+```
