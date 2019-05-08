@@ -4,7 +4,7 @@
  * Licensed under the MIT License.
  */
 
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { HeaderSettings } from '../../interfaces/interfaces';
 
 /**
@@ -13,26 +13,12 @@ import { HeaderSettings } from '../../interfaces/interfaces';
 @Component({
   selector: 'NTHeader',
   templateUrl: './ntheader.component.html',
-  styleUrls: ['./ntheader.component.scss'],
-  inputs: ['HeaderSettings']
 })
 
-export class NTHeaderComponent implements OnInit {
-  
-  headerSettings: HeaderSettings;
+export class NTHeaderComponent {
+
+  @Input() headerSettings: HeaderSettings;
 
   constructor() { }
-
-  ngOnInit() {
-  }
-
-  // Inputs properties
-  get HeaderSettings() {
-    return this.headerSettings;
-  }
-
-  set HeaderSettings(value: HeaderSettings) {
-    this.headerSettings = value;
-  }
 
 }

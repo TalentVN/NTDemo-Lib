@@ -2,50 +2,50 @@
  * Header Interface Model
  */
 export interface HeaderSettings {
-    LogoUrl: string;
-    OrgName?: string;
-    Menus?: MenuData[];
-    User?: User;
+    logoUrl: string;
+    orgName: string;
+    menus?: MenuData[];
+    user: User;
 }
 
 /**
  * Header Menu Interface Model
  */
 export interface MenuData {
-    Title?: string;
-    Link?: string;
+    title: string;
+    link: string;
 }
 
 /**
  * User Info Interface Model
  */
 export interface User {
-    UserName: string;
-    ProfileImage?: string;
-    Tags?: Tag[];
+    userName: string;
+    profileImage: string;
+    tags?: Tag[];
 }
 
 /**
  * User Profile tags Interface Model
  */
 export interface Tag {
-    Detail: string;
-    Link?: string;
+    detail: string;
+    link: string;
 }
 
 /**
  * User Info Interface Model
  */
 export interface Menu {
-    MenuItems?: MenuItem[];
+    menuItems: MenuItem[];
 }
 
 /**
  * User Info Interface Model
  */
 export interface MenuItem {
-    Title: string;
-    Link?: string;
-    Icon?: string;
+    title: string;
+    link: string;
+    icon?: string;
 }
 

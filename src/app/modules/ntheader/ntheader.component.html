@@ -2,20 +2,20 @@
 
     <!-- Org Name -->
     <a class="navbar-brand" href="#">
-        <img src="{{headerSettings.LogoUrl}}" height="50" width="50" alt="..." class=" rounded" style="cursor: grab"> {{headerSettings.OrgName}}
+        <img src="{{headerSettings.logoUrl}}" height="50" width="50" alt="..." class="rounded"> {{headerSettings.orgName}}
     </a>
 
     <!-- button toggle -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
     <!-- Menuitems -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li *ngFor="let menu of headerSettings.Menus" class="nav-item active">
-                <label ngbButtonLabel><a class="nav-link" href="{{menu.Link}}">{{menu.Title}} <span
-              class="sr-only">(current)</span></a></label>
+            <li *ngFor="let menu of headerSettings.menus" class="nav-item active">
+                <label ngbButtonLabel><a class="nav-link" href="{{menu.link}}">{{menu.title}} <span
+                            class="sr-only">(current)</span></a></label>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -26,20 +26,20 @@
 
     <!-- Dropdown Profile -->
     <div ngbDropdown class="d-inline-block" autoClose="outside">
-        <img src="{{headerSettings.User.ProfileImage}}" height="50" width="50" alt="My Profile" id="dropdownForm1" class="rounded-circle" style="cursor: grab; padding: 5px" ngbDropdownToggle>
+        <img [src]="headerSettings.user.profileImage" height="50" width="50" alt="My Profile" id="dropdownForm1" class="rounded-circle" ngbDropdownToggle>
 
         <div ngbDropdownMenu aria-labelledby="dropdownForm1">
             <form class="px-4">
                 <div class="form-group">
                     <label for="exampleDropdownFormEmail1">
-            Signed in as <b>{{headerSettings.User.UserName}}</b>
-          </label>
+                        Signed in as <b>{{headerSettings.user.userName}}</b>
+                    </label>
                 </div>
             </form>
             <div class="dropdown-divider"></div>
-            <label *ngFor="let tag of headerSettings.User.Tags" ngbButtonLabel ngbDropdownItem><a
-          href="{{tag.Link}}">{{tag.Detail}}</a>
-      </label>
+            <label *ngFor="let tag of headerSettings.user.tags" ngbButtonLabel ngbDropdownItem><a
+                    href="{{tag.link}}">{{tag.detail}}</a>
+            </label>
         </div>
     </div>
 </nav>

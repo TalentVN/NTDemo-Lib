@@ -4,7 +4,7 @@
  * Licensed under the MIT License.
  */
 
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { UserLogin } from './userlogin';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdModalContent } from './components/modal/ntmodal.component';
@@ -28,7 +28,7 @@ import { NgbdModalContent } from './components/modal/ntmodal.component';
   styleUrls: ['./ntlogin.component.scss']
 })
 
-export class NTLoginComponent implements OnInit {
+export class NTLoginComponent {
 
   /**
    * userName output
@@ -60,9 +60,6 @@ export class NTLoginComponent implements OnInit {
 
   constructor(private modalService: NgbModal) { }
 
-  ngOnInit() {
-  }
-
   // Onlick to open modal
   open(): void {
     const modalRef = this.modalService.open(NgbdModalContent);
@@ -73,7 +70,7 @@ export class NTLoginComponent implements OnInit {
     // Received result message
     modalRef.result.then((data) => {
       this._outputBinding();
-    })
+    });
   }
 
   _outputBinding(): void {

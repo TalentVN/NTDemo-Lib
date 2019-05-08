@@ -4,7 +4,7 @@
  * Licensed under the MIT License.
  */
 
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 /**
  * NTFooterComponent
@@ -21,7 +21,7 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './ntfooter.component.html',
   styleUrls: ['./ntfooter.component.scss']
 })
-export class NTFooterComponent implements OnInit {
+export class NTFooterComponent {
 
   /**
    * title input as string content
@@ -31,8 +31,4 @@ export class NTFooterComponent implements OnInit {
   @Input() title: string;
 
   constructor() { }
-
-  ngOnInit() {
-  }
-
 }

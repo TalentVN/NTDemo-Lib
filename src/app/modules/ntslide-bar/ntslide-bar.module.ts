@@ -10,7 +10,7 @@ import { NTSlideBarComponent } from './ntslide-bar.component';
   exports: [
     NTSlideBarComponent
   ],
-  bootstrap:[
+  bootstrap: [
     NTSlideBarComponent
   ]
 })

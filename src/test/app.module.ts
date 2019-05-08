@@ -2,10 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { NTheaderModule } from './modules/ntheader/ntheader.module';
-import { NTSlideBarModule } from './modules/ntslide-bar/ntslide-bar.module';
-import { NTFooterModule } from './modules/ntfooter/ntfooter.module';
-import { NTLoginModule } from './modules/ntlogin/ntlogin.module';
+import { NTheaderModule } from '../app/modules/ntheader/ntheader.module';
+import { NTSlideBarModule } from '../app/modules/ntslide-bar/ntslide-bar.module';
+import { NTFooterModule } from '../app/modules/ntfooter/ntfooter.module';
+import { NTLoginModule } from '../app/modules/ntlogin/ntlogin.module';
 
 import { NgbButtonsModule } from '@ng-bootstrap/ng-bootstrap';
 

@@ -4,6 +4,38 @@ This project library demo for 4 components: Header, Slidebar, Bottom, Login
 
 Demo page: [https://talentvn.github.io/NTDemo-Lib/](https://talentvn.github.io/NTDemo-Lib/)
 
+
+### Infrastructure:
+
+```shell
+--- interfaces
+------ interfaces.ts
+--- modules
+------ ntfooter
+------------ ntfooter.component.html
+------------ ntfooter.component.scss
+------------ ntfooter.component.ts
+------------ ntfooter.module.ts
+------ ntheader
+------------ ntheader.component.html
+------------ ntfooter.component.ts
+------------ ntfooter.module.ts
+------ ntlogin
+------------ components
+------------------ modal
+------------------------ ntmodal.component.ts
+------------ ntlogin.component.html
+------------ ntlogin.component.scss
+------------ ntlogin.component.ts
+------------ ntlogin.module.ts
+------ ntslide-bar
+------------ ntslide-bar.component.html
+------------ ntslide-bar.component.scss
+------------ ntslide-bar.component.ts
+------------ ntslide-bar.module.ts
+```
+
+
 ## Dependencies
 | ng-bootstrap | Angular | Bootstrap CSS | fortawesome |
 | ------------ | ------- | ------------- | ------------|
@@ -106,118 +138,118 @@ import { HeaderSettings, Menu } from 'nt-demo-lib/src/app/interfaces/interfaces'
   `,
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'NT-Demo-lib';
+export class AppComponent implements OnInit {
+  protected title = 'NT-Demo-lib';
 
-  bottomTitle = 'Orient Software © 2019 All Rights Reserved. Made with love by Orient Team.';
+  protected bottomTitle = 'Orient Software © 2019 All Rights Reserved. Made with love by Orient Team.';
 
-  headerSettings: HeaderSettings;
-  menuSettings: Menu;
+  protected headerSettings: HeaderSettings;
+  protected menuSettings: Menu;
 
   constructor() { }
 
   ngOnInit() {
-    this._buildHeaderSetting();
-    this._buildMenuSetting();
+    this.buildHeaderSetting();
+    this.buildMenuSetting();
   }
 
   // Fake datas headerSettings
-  private _buildHeaderSetting(): void {
+  protected buildHeaderSetting(): void {
 
     this.headerSettings = {
-      LogoUrl: "https://cdn.worldvectorlogo.com/logos/react.svg",
-      OrgName: "OSD",
-      Menus: [{
-        Title: "Menu 1",
-        Link: "#1"
+      logoUrl: 'https://cdn.worldvectorlogo.com/logos/react.svg',
+      orgName: 'OSD',
+      menus: [{
+        title: 'Menu 1',
+        link: '#1'
       },
       {
-        Title: "Menu 2",
-        Link: "#2"
+        title: 'Menu 2',
+        link: '#2'
       },
       {
-        Title: "Menu 2",
-        Link: "#3"
+        title: 'Menu 2',
+        link: '#3'
       }
       ],
-      User: {
-        UserName: "Nhat Tran",
-        ProfileImage: "https://img.icons8.com/color/1600/circled-user-male-skin-type-1-2.png",
-        Tags: [
+      user: {
+        userName: 'Nhat Tran',
+        profileImage: 'https://img.icons8.com/color/1600/circled-user-male-skin-type-1-2.png',
+        tags: [
           {
-            Detail: "Your Profile",
-            Link: "#"
+            detail: 'Your Profile',
+            link: '#'
           },
           {
-            Detail: "Your Projects",
-            Link: "#"
+            detail: 'Your Projects',
+            link: '#'
           },
           {
-            Detail: "Settings",
-            Link: "#"
+            detail: 'Settings',
+            link: '#'
           },
           {
-            Detail: "Help",
-            Link: "#"
+            detail: 'Help',
+            link: '#'
           },
           {
-            Detail: "Sign Out",
-            Link: "#"
+            detail: 'Sign Out',
+            link: '#'
           }
         ]
       }
-    }
+    };
   }
 
   // Fake datas menuSettings
-  private _buildMenuSetting(): void {
+  protected buildMenuSetting(): void {
     this.menuSettings = {
-      MenuItems: [{
-        Title: "Menu Menu 1",
-        Link: "#",
-        Icon: "far fa-address-book fa-2x"
+      menuItems: [{
+        title: 'Menu Menu 1',
+        link: '#',
+        icon: 'far fa-address-book fa-2x'
       },
       {
-        Title: "Menu Menu Menu 2",
-        Link: "#",
-        Icon: "fab fa-adn fa-2x"
+        title: 'Menu Menu Menu 2',
+        link: '#',
+        icon: 'fab fa-adn fa-2x'
       },
       {
-        Title: "Menu Menu Menu 2",
-        Link: "#",
-        Icon: "fas fa-ambulance fa-2x"
+        title: 'Menu Menu Menu 2',
+        link: '#',
+        icon: 'fas fa-ambulance fa-2x'
       },
       {
-        Title: "Menu Menu Menu 2",
-        Link: "#",
-        Icon: "far fa-address-book fa-2x"
+        title: 'Menu Menu Menu 2',
+        link: '#',
+        icon: 'far fa-address-book fa-2x'
       },
       {
-        Title: "Menu Menu Menu 2",
-        Link: "#",
-        Icon: "fab fa-adn fa-2x"
+        title: 'Menu Menu Menu 2',
+        link: '#',
+        icon: 'fab fa-adn fa-2x'
       },
       {
-        Title: "Menu Menu Menu 2",
-        Link: "#",
-        Icon: ""
+        title: 'Menu Menu Menu 2',
+        link: '#',
+        icon: ''
       },
       ]
-    }
+    };
   }
 
   // Catch UserName from LoginComponent output
-  public getUserName(event) {
+  protected getUserName(event): void {
     console.log(event);
   }
 
   // Catch PassWord from LoginComponent output
-  public getPassWord(event) {
+  protected getPassWord(event): void {
     console.log(event);
   }
 
   // Catch RememberMe from LoginComponent output
-  public getRememberMe(event) {
+  protected getRememberMe(event): void {
     console.log(event);
   }
 }

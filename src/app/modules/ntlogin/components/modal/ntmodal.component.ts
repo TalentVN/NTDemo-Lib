@@ -1,5 +1,5 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, Input } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 /**
  * Custom Ng-Bootstrap Modal
@@ -24,7 +24,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
   `
 })
 
-export class NgbdModalContent implements OnInit {
+export class NgbdModalContent {
 
   /**
    * Pass UserName
@@ -45,10 +45,6 @@ export class NgbdModalContent implements OnInit {
   @Input() RememberMe: boolean;
 
   constructor(public activeModal: NgbActiveModal) { }
-
-  ngOnInit() {
-
-  }
 
   onClose(message: string): void {
 

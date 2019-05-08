@@ -24,34 +24,22 @@ import { Menu } from '../../interfaces/interfaces';
   selector: 'NTSlide-Bar',
   templateUrl: './ntslide-bar.component.html',
   styleUrls: ['./ntslide-bar.component.scss'],
-  inputs: ['MenuSettings']
 })
-export class NTSlideBarComponent implements OnInit {
+export class NTSlideBarComponent {
 
   /**
    * Input title of this SlideBar to show Slibar Name or detail
    * If you don't want to show then not input value
    * @type {string}
    */
-  @Input() title: string = "";
+  @Input() title: string;
 
-  menuSettings: Menu;
+  /**
+   * Input Menu setting params
+   * @type {Menu}
+   */
+  @Input() menuSettings: Menu;
 
   constructor() {
-
   }
-
-  ngOnInit() {
-
-  }
-
-  // Inputs properties
-  get MenuSettings() {
-    return this.menuSettings;
-  }
-
-  set MenuSettings(value: Menu) {
-    this.menuSettings = value;
-  }
-
 }
