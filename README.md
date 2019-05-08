@@ -2,6 +2,8 @@
 
 This project library demo for 4 components: Header, Slidebar, Bottom, Login
 
+Demo page: [https://talentvn.github.io/NTDemo-Lib/](https://talentvn.github.io/NTDemo-Lib/)
+
 ## Dependencies
 | ng-bootstrap | Angular | Bootstrap CSS | fortawesome |
 | ------------ | ------- | ------------- | ------------|
@@ -90,7 +92,7 @@ import { HeaderSettings, Menu } from 'nt-demo-lib/src/app/interfaces/interfaces'
           <NTSlide-Bar title="{{title}}" [MenuSettings]="menuSettings"></NTSlide-Bar>
         </div>
         <div class="col-md-9">
-          <!--The content below is only a placeholder and can be replaced.-->
+          <!--Render Login Component-->
           <NTLogin (userName)='getUserName($event)' (passWord)='getPassWord($event)' (rememberMe)='getRememberMe($event)'>
           </NTLogin>
         </div>
@@ -171,32 +173,32 @@ export class AppComponent {
   private _buildMenuSetting(): void {
     this.menuSettings = {
       MenuItems: [{
-        Title: "Menu Menu Menu Menu Menu 1", // Set Menu title
-        Link: "#",                           // Set link to direct
-        Icon: "fab fa-airbnb"                // set Font Awesome icons with class
-      },
-      {
-        Title: "Menu 2",
+        Title: "Menu Menu 1",
         Link: "#",
-        Icon: ""
+        Icon: "far fa-address-book fa-2x"
       },
       {
-        Title: "Menu 2",
+        Title: "Menu Menu Menu 2",
         Link: "#",
-        Icon: ""
+        Icon: "fab fa-adn fa-2x"
       },
       {
-        Title: "Menu 2",
+        Title: "Menu Menu Menu 2",
         Link: "#",
-        Icon: ""
+        Icon: "fas fa-ambulance fa-2x"
       },
       {
-        Title: "Menu 2",
+        Title: "Menu Menu Menu 2",
         Link: "#",
-        Icon: ""
+        Icon: "far fa-address-book fa-2x"
       },
       {
-        Title: "Menu 2",
+        Title: "Menu Menu Menu 2",
+        Link: "#",
+        Icon: "fab fa-adn fa-2x"
+      },
+      {
+        Title: "Menu Menu Menu 2",
         Link: "#",
         Icon: ""
       },

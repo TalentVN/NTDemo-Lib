@@ -18,10 +18,7 @@ import { HeaderSettings } from '../../interfaces/interfaces';
 })
 
 export class NTHeaderComponent implements OnInit {
-
-  @Input() title: string;
   
-
   headerSettings: HeaderSettings;
 
   constructor() { }
