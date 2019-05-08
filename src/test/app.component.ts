@@ -128,6 +128,11 @@ export class AppComponent implements OnInit {
   }
 
   // Catch RememberMe from LoginComponent output
+  public getSubmited(event): void {
+    console.log(event);
+  }
+
+  // Catch RememberMe from LoginComponent output
   public searchSubmit(event): void {
     console.log(event);
   }

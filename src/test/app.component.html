@@ -14,11 +14,11 @@
 
             <!--The content below is only a placeholder and can be replaced.-->
             <NTLogin (userName)='getUserName($event)' (passWord)='getPassWord($event)'
-                (rememberMe)='getRememberMe($event)'></NTLogin>
+                (rememberMe)='getRememberMe($event)' (submited)='getSubmited($event)'></NTLogin>
         </div>
     </div>
 
-    <NTFooter title="{{bottomTitle}}"></NTFooter>
+    <NTFooter [title]="bottomTitle"></NTFooter>
 
     <!-- Content -->
     <router-outlet></router-outlet>

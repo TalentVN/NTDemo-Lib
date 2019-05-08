@@ -120,11 +120,14 @@ imports: [
   ],
 ```
   Template
-```ts
+```html
 <NTHeader title="{{title}}" (onSubmit)="searchSubmit($event)" [headerSettings]="headerSettings"></NTHeader>
 ```
  Setting header on component file such as app.component.ts
 ```ts
+// Init title
+title = 'NT-Demo-lib';
+// Setting header to render
 headerSettings = {
       logoUrl: 'https://cdn.worldvectorlogo.com/logos/react.svg',
       orgName: 'OSD',
@@ -167,13 +170,144 @@ headerSettings = {
           }
         ]
       }
+
+  // Catch submit search string from NTHeader search imput output
+  public searchSubmit(event): void {
+    console.log(event);
+  }
+```
+
+### How to use NTFooterModule and NTFooterComponent
+
+  Import Module
+```ts
+// Footer Module include Footer component
+import { NTFooterModule } from 'nt-demo-lib';
+...
+imports: [
+    NTFooterModule,
+  ],
+```
+  Template
+```html
+<NTFooter [title]="bottomTitle"></NTFooter>
+```
+ Setting footer on component file such as app.component.ts
+```ts
+// Init bottom title
+bottomTitle = 'Orient Software © 2019 All Rights Reserved. Made with love by Orient Team.';
+```
+
+### How to use NTSlideBarModule and NTSlideBarComponent
+
+  Import Module
+```ts
+// SlideBar Module include SlideBar component
+import { NTSlideBarModule } from 'nt-demo-lib';
+...
+imports: [
+    NTSlideBarModule,
+  ],
+```
+  Template
+```html
+<NTSlide-Bar [isOpen]="isOpen" title="{{title}}" [menuSettings]="menuSettings"></NTSlide-Bar>
+
+<!-- Rounded switch -->
+<label class="switch">
+    <input (click)="toggle()" type="checkbox" checked>
+    <span class="slider round"></span>
+</label>
+```
+ Setting header on component file such as app.component.ts
+```ts
+// Init toggle
+isOpen: boolean = true;
+// Init slidebar settings to render
+menuSettings = {
+      menuItems: [{
+        title: 'Menu Menu 1',
+        link: '#',
+        icon: 'far fa-address-book fa-2x'
+      },
+      {
+        title: 'Menu Menu Menu 2',
+        link: '#',
+        icon: 'fab fa-adn fa-2x'
+      },
+      {
+        title: 'Menu Menu Menu 2',
+        link: '#',
+        icon: 'fas fa-ambulance fa-2x'
+      },
+      {
+        title: 'Menu Menu Menu 2',
+        link: '#',
+        icon: 'far fa-address-book fa-2x'
+      },
+      {
+        title: 'Menu Menu Menu 2',
+        link: '#',
+        icon: 'fab fa-adn fa-2x'
+      },
+      {
+        title: 'Menu Menu Menu 2',
+        link: '#',
+        icon: ''
+      },
+      ]
+    };
+
+toggle(): void {
+  this.isOpen = !this.isOpen;
+}
+```
+
+### How to use NTLoginModule and NTLoginComponent
+
+  Import Module
+```ts
+// Login Module include Login component
+import { NTLoginModule } from 'nt-demo-lib';
+...
+imports: [
+    NTLoginModule,
+  ],
+```
+  Template
+```html
+<NTLogin (userName)='getUserName($event)' (passWord)='getPassWord($event)'
+                (rememberMe)='getRememberMe($event)'></NTLogin>
+```
+
+ Setting Login on component file such as app.component.ts
+```ts
+// Catch UserName from LoginComponent output
+public getUserName(event): void {
+  console.log(event);
+}
+
+// Catch PassWord from LoginComponent output
+public getPassWord(event): void {
+  console.log(event);
+}
+
+// Catch RememberMe from LoginComponent output
+public getRememberMe(event): void {
+  console.log(event);
+}
+
+// Catch submit event from LoginComponent output
+public getSubmited(event): void {
+  console.log(event);
+}
 ```
 
 ### Demo page using 4 components: Header, SlideBar, Footer, Login
 
 All sample use modules and components in here: [https://github.com/TalentVN/NTDemo-Lib/tree/master/src/test](https://github.com/TalentVN/NTDemo-Lib/tree/master/src/test)
 
-```ts
+<!-- ```ts
 import { Component, OnInit } from '@angular/core';
 import { HeaderSettings, Menu } from 'nt-demo-lib/src/app/interfaces/interfaces';
 
@@ -332,4 +466,4 @@ export class AppComponent implements OnInit {
     console.log(event);
   }
 }
-```
+``` -->
