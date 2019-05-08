@@ -84,7 +84,7 @@ import { HeaderSettings, Menu } from 'nt-demo-lib/src/app/interfaces/interfaces'
   selector: 'app-root',
   template: `
     <div class="container">
-      <NTHeader title="{{title}}" [headerSettings]="headerSettings"></NTHeader>
+      <NTHeader title="{{title}}" [HeaderSettings]="headerSettings"></NTHeader>
       <div class="row">
         <div class="col-md-3">
           <NTSlide-Bar title="{{title}}" [MenuSettings]="menuSettings"></NTSlide-Bar>
@@ -112,9 +112,16 @@ export class AppComponent {
   headerSettings: HeaderSettings;
   menuSettings: Menu;
 
-  constructor() {
+  constructor() { }
 
-    // Fake datas headerSettings
+  ngOnInit() {
+    this._buildHeaderSetting();
+    this._buildMenuSetting();
+  }
+
+  // Fake datas headerSettings
+  private _buildHeaderSetting(): void {
+
     this.headerSettings = {
       LogoUrl: "https://cdn.worldvectorlogo.com/logos/react.svg",
       OrgName: "OSD",
@@ -158,11 +165,18 @@ export class AppComponent {
         ]
       }
     }
+  }
 
-    // Fake datas menuSettings
+  // Fake datas menuSettings
+  private _buildMenuSetting(): void {
     this.menuSettings = {
       MenuItems: [{
-        Title: "Menu Menu Menu Menu Menu 1",
+        Title: "Menu Menu Menu Menu Menu 1", // Set Menu title
+        Link: "#",                           // Set link to direct
+        Icon: "fab fa-airbnb"                // set Font Awesome icons with class
+      },
+      {
+        Title: "Menu 2",
         Link: "#",
         Icon: ""
       },
@@ -170,22 +184,38 @@ export class AppComponent {
         Title: "Menu 2",
         Link: "#",
         Icon: ""
-      },]
+      },
+      {
+        Title: "Menu 2",
+        Link: "#",
+        Icon: ""
+      },
+      {
+        Title: "Menu 2",
+        Link: "#",
+        Icon: ""
+      },
+      {
+        Title: "Menu 2",
+        Link: "#",
+        Icon: ""
+      },
+      ]
     }
   }
 
-  // Catch UserName output
-  getUserName(event) {
+  // Catch UserName from LoginComponent output
+  public getUserName(event) {
     console.log(event);
   }
 
-  // Catch PassWord output
-  getPassWord(event) {
+  // Catch PassWord from LoginComponent output
+  public getPassWord(event) {
     console.log(event);
   }
 
-  // Catch RememberMe output
-  getRememberMe(event) {
+  // Catch RememberMe from LoginComponent output
+  public getRememberMe(event) {
     console.log(event);
   }
 }

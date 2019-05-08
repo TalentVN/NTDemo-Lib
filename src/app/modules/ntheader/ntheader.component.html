@@ -2,7 +2,7 @@
 
     <!-- Org Name -->
     <a class="navbar-brand" href="#">
-        <img src="{{_headerSettings.LogoUrl}}" height="50" width="50" alt="..." class=" rounded" style="cursor: grab"> {{_headerSettings.OrgName}}
+        <img src="{{headerSettings.LogoUrl}}" height="50" width="50" alt="..." class=" rounded" style="cursor: grab"> {{headerSettings.OrgName}}
     </a>
 
     <!-- button toggle -->
@@ -13,7 +13,7 @@
     <!-- Menuitems -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li *ngFor="let menu of _headerSettings.Menus" class="nav-item active">
+            <li *ngFor="let menu of headerSettings.Menus" class="nav-item active">
                 <label ngbButtonLabel><a class="nav-link" href="{{menu.Link}}">{{menu.Title}} <span
               class="sr-only">(current)</span></a></label>
             </li>
@@ -26,18 +26,18 @@
 
     <!-- Dropdown Profile -->
     <div ngbDropdown class="d-inline-block" autoClose="outside">
-        <img src="{{_headerSettings.User.ProfileImage}}" height="50" width="50" alt="My Profile" id="dropdownForm1" class="rounded-circle" style="cursor: grab; padding: 5px" ngbDropdownToggle>
+        <img src="{{headerSettings.User.ProfileImage}}" height="50" width="50" alt="My Profile" id="dropdownForm1" class="rounded-circle" style="cursor: grab; padding: 5px" ngbDropdownToggle>
 
         <div ngbDropdownMenu aria-labelledby="dropdownForm1">
             <form class="px-4">
                 <div class="form-group">
                     <label for="exampleDropdownFormEmail1">
-            Signed in as <b>{{_headerSettings.User.UserName}}</b>
+            Signed in as <b>{{headerSettings.User.UserName}}</b>
           </label>
                 </div>
             </form>
             <div class="dropdown-divider"></div>
-            <label *ngFor="let tag of _headerSettings.User.Tags" ngbButtonLabel ngbDropdownItem><a
+            <label *ngFor="let tag of headerSettings.User.Tags" ngbButtonLabel ngbDropdownItem><a
           href="{{tag.Link}}">{{tag.Detail}}</a>
       </label>
         </div>

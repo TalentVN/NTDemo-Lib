@@ -14,7 +14,7 @@ import { HeaderSettings } from '../../interfaces/interfaces';
   selector: 'NTHeader',
   templateUrl: './ntheader.component.html',
   styleUrls: ['./ntheader.component.scss'],
-  inputs: ['headerSettings']
+  inputs: ['HeaderSettings']
 })
 
 export class NTHeaderComponent implements OnInit {
@@ -22,7 +22,7 @@ export class NTHeaderComponent implements OnInit {
   @Input() title: string;
   
 
-  _headerSettings: HeaderSettings;
+  headerSettings: HeaderSettings;
 
   constructor() { }
 
@@ -30,12 +30,12 @@ export class NTHeaderComponent implements OnInit {
   }
 
   // Inputs properties
-  get headerSettings() {
-    return this._headerSettings;
+  get HeaderSettings() {
+    return this.headerSettings;
   }
 
-  set headerSettings(value: HeaderSettings) {
-    this._headerSettings = value;
+  set HeaderSettings(value: HeaderSettings) {
+    this.headerSettings = value;
   }
 
 }

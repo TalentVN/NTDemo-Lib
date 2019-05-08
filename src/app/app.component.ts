@@ -14,9 +14,16 @@ export class AppComponent implements OnInit {
   headerSettings: HeaderSettings;
   menuSettings: Menu;
 
-  constructor() {
+  constructor() { }
 
-    // Fake datas headerSettings
+  ngOnInit() {
+    this._buildHeaderSetting();
+    this._buildMenuSetting();
+  }
+
+  // Fake datas headerSettings
+  private _buildHeaderSetting(): void {
+
     this.headerSettings = {
       LogoUrl: "https://cdn.worldvectorlogo.com/logos/react.svg",
       OrgName: "OSD",
@@ -60,36 +67,38 @@ export class AppComponent implements OnInit {
         ]
       }
     }
+  }
 
-    // Fake datas menuSettings
+  // Fake datas menuSettings
+  private _buildMenuSetting(): void {
     this.menuSettings = {
       MenuItems: [{
-        Title: "Menu Menu Menu Menu Menu 1",
+        Title: "Menu Menu 1",
         Link: "#",
-        Icon: ""
+        Icon: "far fa-address-book fa-2x"
       },
       {
-        Title: "Menu 2",
+        Title: "Menu Menu Menu 2",
         Link: "#",
-        Icon: ""
+        Icon: "fab fa-adn fa-2x"
       },
       {
-        Title: "Menu 2",
+        Title: "Menu Menu Menu 2",
         Link: "#",
-        Icon: ""
+        Icon: "fas fa-ambulance fa-2x"
       },
       {
-        Title: "Menu 2",
+        Title: "Menu Menu Menu 2",
         Link: "#",
-        Icon: ""
+        Icon: "far fa-address-book fa-2x"
       },
       {
-        Title: "Menu 2",
+        Title: "Menu Menu Menu 2",
         Link: "#",
-        Icon: ""
+        Icon: "fab fa-adn fa-2x"
       },
       {
-        Title: "Menu 2",
+        Title: "Menu Menu Menu 2",
         Link: "#",
         Icon: ""
       },
@@ -97,22 +106,18 @@ export class AppComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-
-  }
-
-  // Catch UserName output
-  getUserName(event) {
+  // Catch UserName from LoginComponent output
+  public getUserName(event) {
     console.log(event);
   }
 
-  // Catch PassWord output
-  getPassWord(event) {
+  // Catch PassWord from LoginComponent output
+  public getPassWord(event) {
     console.log(event);
   }
 
-  // Catch RememberMe output
-  getRememberMe(event) {
+  // Catch RememberMe from LoginComponent output
+  public getRememberMe(event) {
     console.log(event);
   }
 }
