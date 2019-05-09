@@ -1,6 +1,6 @@
 {
-    "name": "nt-demo-lib",
-    "version": "1.0.1",
+    "name": "nt-demo-library",
+    "version": "0.0.2",
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
@@ -50,5 +50,21 @@
         "tslint": "~5.11.0",
         "typescript": "~3.2.2",
         "zone.js": "~0.8.26"
-    }
+    },
+    "description": "This project library demo for 4 components: Header, Slidebar, Bottom, Login",
+    "main": "index.js",
+    "directories": {
+        "doc": "docs"
+    },
+    "dependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/TalentVN/NTDemo-Lib.git"
+    },
+    "author": "Nhat Tran",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/TalentVN/NTDemo-Lib/issues"
+    },
+    "homepage": "https://github.com/TalentVN/NTDemo-Lib#readme"
 }
