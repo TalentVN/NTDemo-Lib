@@ -13,7 +13,7 @@
 
     <!-- Menuitems -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul *ngIf="headerSettings.menus != 'undefined'" class="navbar-nav mr-auto">
+        <ul *ngIf="headerSettings.menus != null" class="navbar-nav mr-auto">
             <li *ngFor="let menu of headerSettings.menus" class="nav-item active">
                 <label ngbButtonLabel><a class="nav-link text-dark" href="{{menu.link}}">{{menu.title}} <span
                             class="sr-only">(current)</span></a></label>
