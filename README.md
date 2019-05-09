@@ -43,7 +43,7 @@ Demo page: [https://talentvn.github.io/NTDemo-Lib/](https://talentvn.github.io/N
 
 ## Intall npm
 
-NPM linl: [https://www.npmjs.com/package/nt-demo-library](https://www.npmjs.com/package/nt-demo-library)
+NPM link: [https://www.npmjs.com/package/nt-demo-library](https://www.npmjs.com/package/nt-demo-library)
 
 ```shell
 npm install --save nt-demo-library
