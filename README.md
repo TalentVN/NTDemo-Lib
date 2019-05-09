@@ -93,13 +93,13 @@ npm install --save nt-demo-lib
 
 ```ts
 // Header Module include Header component
-import { NTheaderModule } from 'nt-demo-lib';
+import { NTheaderModule } from 'nt-demo-library';
 // SlideBarModule inclode SlideBar component
-import { NTSlideBarModule } from 'nt-demo-lib';
+import { NTSlideBarModule } from 'nt-demo-library';
 // FooterModule inclode Footer component
-import { NTFooterModule } from 'nt-demo-lib';
+import { NTFooterModule } from 'nt-demo-library';
 // LoginModule inclode Login component
-import { NTLoginModule } from 'nt-demo-lib';
+import { NTLoginModule } from 'nt-demo-library';
 ...
 ...
 imports: [
@@ -115,7 +115,7 @@ imports: [
   Import Module
 ```ts
 // Header Module include Header component
-import { NTheaderModule } from 'nt-demo-lib';
+import { NTheaderModule } from 'nt-demo-library';
 ...
 imports: [
     NTheaderModule,
@@ -185,7 +185,7 @@ imports: [
   Import Module
 ```ts
 // Footer Module include Footer component
-import { NTFooterModule } from 'nt-demo-lib';
+import { NTFooterModule } from 'nt-demo-library';
 ...
 imports: [
     NTFooterModule,
@@ -206,7 +206,7 @@ bottomTitle = 'Orient Software © 2019 All Rights Reserved. Made with love by Or
   Import Module
 ```ts
 // SlideBar Module include SlideBar component
-import { NTSlideBarModule } from 'nt-demo-lib';
+import { NTSlideBarModule } from 'nt-demo-library';
 ...
 imports: [
     NTSlideBarModule,
@@ -271,7 +271,7 @@ toggle(): void {
   Import Module
 ```ts
 // Login Module include Login component
-import { NTLoginModule } from 'nt-demo-lib';
+import { NTLoginModule } from 'nt-demo-library';
 ...
 imports: [
     NTLoginModule,
@@ -312,7 +312,7 @@ All sample use modules and components in here: [https://github.com/TalentVN/NTDe
 
 ```ts
 import { Component, OnInit } from '@angular/core';
-import { HeaderSettings, Menu } from 'nt-demo-lib/src/app/interfaces/interfaces';
+import { HeaderSettings, Menu } from 'nt-demo-library/src/app/interfaces/interfaces';
 
 @Component({
   selector: 'app-root',
