@@ -1,22 +1,22 @@
-.NTslidebar {
-  height: 80%;
-  overflow-y: auto;
-  overflow-x: hidden;
+.ntslidebar {
+    height: 80%;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #sidebar {
-  height: 82vh;
-  background-color: #ccc;
+    height: 82vh;
+    background-color: #ccc;
 }
 
 #sidebar .list-group-item {
-  border-radius: 0;
-  background-color: #ccc;
-  color: #ccc;
-  border-color: #ccc;
-  text-decoration: none;
+    border-radius: 0;
+    background-color: #ccc;
+    color: #ccc;
+    border-color: #ccc;
+    text-decoration: none;
 }
 
 .slideclose {
-  width: 0;
+    width: 0;
 }

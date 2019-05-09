@@ -76,7 +76,7 @@ export class AppComponent implements OnInit {
     this.menuSettings = {
       menuItems: [{
         title: 'Menu Menu 1',
-        link: '#',
+        link: 'facebool',
         icon: 'far fa-address-book fa-2x'
       },
       {

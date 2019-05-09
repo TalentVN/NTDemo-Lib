@@ -1,4 +1,7 @@
-<div class="container">
+<title>
+    <h1>NT-Demo-lib</h1>
+</title>
+<div class="">
     <NTHeader title="{{title}}" (onSubmit)="searchSubmit($event)" [headerSettings]="headerSettings"></NTHeader>
     <div class="row">
 
@@ -13,8 +16,7 @@
             </label>
 
             <!--The content below is only a placeholder and can be replaced.-->
-            <NTLogin (userName)='getUserName($event)' (passWord)='getPassWord($event)'
-                (rememberMe)='getRememberMe($event)' (submited)='getSubmited($event)'></NTLogin>
+            <NTLogin (userName)='getUserName($event)' (passWord)='getPassWord($event)' (rememberMe)='getRememberMe($event)' (submited)='getSubmited($event)'></NTLogin>
         </div>
     </div>
 

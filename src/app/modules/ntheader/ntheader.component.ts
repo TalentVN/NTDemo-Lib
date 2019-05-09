@@ -31,7 +31,7 @@ export class NTHeaderComponent {
    */
   @Output() onSubmit = new EventEmitter<string>();
 
-  searchString: string = '';
+  searchString = '';
 
   constructor() { }
 
