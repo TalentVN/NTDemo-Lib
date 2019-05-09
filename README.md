@@ -468,7 +468,7 @@ export class AppComponent implements OnInit {
     console.log(event);
   }
 
-  // Catch RememberMe from LoginComponent output
+  // Catch search string from NTHeader search input value when this submit
   public searchSubmit(event): void {
     console.log(event);
   }
