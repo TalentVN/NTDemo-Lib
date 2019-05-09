@@ -126,53 +126,54 @@ imports: [
  Setting header on component file such as app.component.ts
 ```ts
 // Init title
-title = 'NT-Demo-lib';
-// Setting header to render
-headerSettings = {
-      logoUrl: 'https://cdn.worldvectorlogo.com/logos/react.svg',
-      orgName: 'OSD',
-      menus: [{
-        title: 'Menu 1',
-        link: '#1'
-      },
-      {
-        title: 'Menu 2',
-        link: '#2'
-      },
-      {
-        title: 'Menu 2',
-        link: '#3'
-      }
-      ],
-      user: {
-        userName: 'Nhat Tran',
-        profileImage: 'https://img.icons8.com/color/1600/circled-user-male-skin-type-1-2.png',
-        tags: [
-          {
-            detail: 'Your Profile',
-            link: '#'
-          },
-          {
-            detail: 'Your Projects',
-            link: '#'
-          },
-          {
-            detail: 'Settings',
-            link: '#'
-          },
-          {
-            detail: 'Help',
-            link: '#'
-          },
-          {
-            detail: 'Sign Out',
-            link: '#'
-          }
-        ]
-      }
+  title = 'NT-Demo-lib';
+  // Setting header to render
+  headerSettings = {
+    logoUrl: 'https://cdn.worldvectorlogo.com/logos/react.svg',
+    orgName: 'OSD',
+    menus: [{
+      title: 'Menu 1',
+      link: '#1'
+    },
+    {
+      title: 'Menu 2',
+      link: '#2'
+    },
+    {
+      title: 'Menu 2',
+      link: '#3'
+    }
+    ],
+    user: {
+      userName: 'Nhat Tran',
+      profileImage: 'https://img.icons8.com/color/1600/circled-user-male-skin-type-1-2.png',
+      tags: [
+        {
+          detail: 'Your Profile',
+          link: '#'
+        },
+        {
+          detail: 'Your Projects',
+          link: '#'
+        },
+        {
+          detail: 'Settings',
+          link: '#'
+        },
+        {
+          detail: 'Help',
+          link: '#'
+        },
+        {
+          detail: 'Sign Out',
+          link: '#'
+        }
+      ]
+    }
+  };
 
   // Catch submit search string from NTHeader search imput output
-  public searchSubmit(event): void {
+  searchSubmit(event): void {
     console.log(event);
   }
 ```
